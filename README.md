@@ -1,17 +1,16 @@
 # Building-Kafka-on-Linux
 ### Linux系统上Kafka的搭建及producer和consumer的java实现。（不断更新）
 -----
-## 第一章节 Linux系统(centOS7)上Kafka的搭建和使用教程（超全）    
+## 第一章 Linux系统(centOS7)上Kafka的搭建和使用教程（超全）    
 （普通用户状态下：“$”代表普通用户，“#”代表root用户）     
-### 一、在Linux系统上搭建Kafka   
 参考教程1：[centos7安装kafka](https://blog.csdn.net/qq_28666081/article/details/92020989)   
 参考教程2：[CentOS7安装和使用kafka](https://blog.csdn.net/zzq900503/article/details/83348419)    
 环境：jdk1.8    kafka2.11    centos7    
-#### 1.安装JDK   
+### 一、安装JDK   
 参考教程：[Centos7中yum安装jdk及配置环境变量](https://www.cnblogs.com/52lxl-top/p/9877202.html)   
-##### （1）查看系统版本 cat /etc/redhat-release    
+#### 1.查看系统版本 cat /etc/redhat-release    
 图1   
-##### （2）安装之前先查看一下有无系统自带jdk   
+#### 2.安装之前先查看一下有无系统自带jdk   
 ```shell     
 # rpm -qa |grep java
 # rpm -qa |grep jdk
@@ -19,20 +18,20 @@
 ```   
 图2   
 图3   
-##### （3）如果有就使用批量卸载命令   
+#### 3.如果有就使用批量卸载命令   
 ```shell
 # rpm -qa | grep java | xargs rpm -e --nodeps 
 ```   
-##### （4）直接yum安装1.8.0版本openjdk   
+#### 4.直接yum安装1.8.0版本openjdk   
 ```shell
 # yum install java-1.8.0-openjdk* -y
 ```    
-##### （5）检查版本    
+#### 5.检查版本    
 ```shell
 $ java -version
 ```    
 图4    
-##### （6）生效配置（三选一，按照自己当前需求选择）     
+#### 6.生效配置（三选一，按照自己当前需求选择）     
 - 临时生效     
 ```shell
 $ export JAVA_HOME=/usr/lib/jvm/<span style="font-family: Arial;">jre-1.8.0-openjdk-1.8.0.121-0.b13.el7_3.x86_64</span> 
@@ -58,7 +57,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 图5    
 需要在你的代码前加sudo，临时取得授权。     
 - ②代码中jdk的版本和路径因人而异，具体情况因自己所装java的版本和地址而异。     
-##### （7）查看变量     
+#### 7.查看变量     
 ```shell
 $ echo $JAVA_HOME
 ```     
