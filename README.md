@@ -102,5 +102,30 @@ $ cd kafka
 - 方案二 独立安装zookeeper服务   
 - 方案三 使用hadoop集群cdh等套件中的zookeeper（目前探索中，未完待续）   
 #### 1.方案一 使用kafka自带的zookeeper    
-适用于测试等小型场景或者单点kafka。关于使用kafka安装包中的脚本启动单节点Zookeeper的实例。直接调到<u>四、Kafka操作 中的方案一</u>即可。
+- 特点：适用于测试等小型场景或者单点kafka。     
+关于使用kafka安装包中的脚本启动单节点Zookeeper的实例。直接调到
+__四、Kafka操作 中的方案一__
+即可。    
+#### 2.方案二 独立安装zookeeper服务     
+- 特点：最灵活的方式，适用于单点和多节点kafka。   
+参考教程：[zookeeper-3.5.6最新版安装攻略，以及安装问题汇总](https://www.cnblogs.com/itworkers/p/11697513.html)    
+ZooKeeper下载网址：[ZooKeeper镜像文件下载网址](http://mirror.bit.edu.cn/apache/zookeeper/)     
+选择自己需要安装的ZooKeeper版本。这里以目前最新版本的zookeeper-3.5.6为例。      
+##### （1）下载     
+**注意：**
+目前的最新版本3.5.5开始，带有bin名称的包才是我们想要的下载可以直接使用的里面有编译后的二进制的包，而之前的普通的tar.gz的包里面是只是源码的包无法直接使用。所以要安装带bin的包！（这个源码包和编译后的包的命名方式将来可能会改，大家下载之前一定要去网页上确认一下自己下载的版本的已编译的包的名字）    
+```shell
+wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.5.6/apache-zookeeper-3.5.6-bin.tar.gz
+```    
+图9    
+##### （2）解压安装并简化命名（与Kafka安装流程类似）      
+```shell
+tar -zxvf apache-zookeeper-3.5.6-bin.tar.gz
+mv apache-zookeeper-3.5.6-bin zookeeper
+cd zookeeper
+```     
+图10   
+进入了ZooKeeper目录，最后创建data目录，为稍后配置文件做准备：   
+##### （3）创建配置文件   
+可以直接修改，也可以复制粘贴sample文件，然后做修改。    
 
