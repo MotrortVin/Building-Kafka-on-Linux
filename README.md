@@ -1,7 +1,7 @@
 # Building-Kafka-on-Linux
-### Linux系统上Kafka的搭建及producer和consumer的java实现。（不断更新）     
+> Linux系统上Kafka的搭建及producer和consumer的java实现。（不断更新）     
+>作者：[Motrort Vin](github.com/MotrortVin)，转载请标明出处。
 -----
-作者：[Motrort Vin](github.com/MotrortVin)，转载请标明出处。
 ## 第一章 Linux系统(centOS7)上Kafka的搭建和使用教程（超全）    
 （普通用户状态下：“$”代表普通用户，“#”代表root用户）     
 参考教程1：[centos7安装kafka](https://blog.csdn.net/qq_28666081/article/details/92020989)   
