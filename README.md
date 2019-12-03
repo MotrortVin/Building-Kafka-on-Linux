@@ -76,7 +76,8 @@ $ echo $CLASSPATH
 $ wget http://mirror.bit.edu.cn/apache/kafka/2.2.1/kafka_2.11-2.2.1.tgz
 ```   
 图7    
-**注意：**如果报错：wget: command not found。可通过如下命令安装wget：   
+**注意：**
+如果报错：wget: command not found。可通过如下命令安装wget：   
 ```shell
 # yum -y install wget
 ```    
@@ -89,7 +90,8 @@ $ tar zxvf kafka_2.11-2.2.1.tgz
 ```shell
 $ mv kafka_2.11-2.2.1 kafka
 ```    
-**注意：**命名简化后，就可以通过   
+**注意：**
+命名简化后，就可以通过   
 ```shell
 $ cd kafka
 ```
