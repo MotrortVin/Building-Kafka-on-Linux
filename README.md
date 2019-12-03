@@ -101,3 +101,6 @@ $ cd kafka
 - 方案一 使用kafka自带的zookeeper   
 - 方案二 独立安装zookeeper服务   
 - 方案三 使用hadoop集群cdh等套件中的zookeeper（目前探索中，未完待续）   
+#### 1.方案一 使用kafka自带的zookeeper    
+适用于测试等小型场景或者单点kafka。关于使用kafka安装包中的脚本启动单节点Zookeeper的实例。直接调到<u>四、Kafka操作 中的方案一</u>即可。
+
