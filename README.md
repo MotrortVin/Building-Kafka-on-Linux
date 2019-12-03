@@ -53,11 +53,11 @@ export JAVA_HOME=/usr/lib/jvm/java
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/jre/lib/rt.jar
 export PATH=$PATH:$JAVA_HOME/bin
 ```     
-**注意**     
-- 如果遇到下面的提示：     
+**注意：**     
+- ①如果遇到下面的提示：     
 图5    
 需要在你的代码前加sudo，临时取得授权。     
-- 代码中jdk的版本和路径因人而异，具体情况因自己所装java的版本和地址而异。     
+- ②代码中jdk的版本和路径因人而异，具体情况因自己所装java的版本和地址而异。     
 ##### （7）查看变量     
 ```shell
 $ echo $JAVA_HOME
@@ -76,8 +76,7 @@ $ echo $CLASSPATH
 $ wget http://mirror.bit.edu.cn/apache/kafka/2.2.1/kafka_2.11-2.2.1.tgz
 ```   
 图7    
-**注意**   
-如果报错：wget: command not found。可通过如下命令安装wget：   
+**注意：**如果报错：wget: command not found。可通过如下命令安装wget：   
 ```shell
 # yum -y install wget
 ```    
@@ -90,8 +89,7 @@ $ tar zxvf kafka_2.11-2.2.1.tgz
 ```shell
 $ mv kafka_2.11-2.2.1 kafka
 ```    
-**注意**    
-命名简化后，就可以通过   
+**注意：**命名简化后，就可以通过   
 ```shell
 $ cd kafka
 ```
