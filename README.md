@@ -16,8 +16,8 @@
 # rpm -qa |grep jdk
 # rpm -qa |grep gcj
 ```   
-图2   
-图3   
+![graph2](/graphs/2.png)   
+![graph3](/graphs/3.png) 
 #### 3.如果有就使用批量卸载命令   
 ```shell
 # rpm -qa | grep java | xargs rpm -e --nodeps 
@@ -30,7 +30,7 @@
 ```shell
 $ java -version
 ```    
-图4    
+![graph4](/graphs/4.png)     
 #### 6.生效配置（三选一，按照自己当前需求选择）     
 - 临时生效     
 ```shell
@@ -54,19 +54,19 @@ export PATH=$PATH:$JAVA_HOME/bin
 ```     
 **注意：**     
 - ①如果遇到下面的提示：     
-图5    
+![graph5](/graphs/5.png)    
 需要在你的代码前加sudo，临时取得授权。     
 - ②代码中jdk的版本和路径因人而异，具体情况因自己所装java的版本和地址而异。     
 #### 7.查看变量     
 ```shell
 $ echo $JAVA_HOME
 ```     
-图6     
+![graph6](/graphs/6.png)     
 ```shell
 $ echo $CLASSPATH
 ```     
 （如果设置了对所有用户生效，即可出现下图的报文）     
-图7     
+![graph7](/graphs/7.png)     
 ### 二、安装Kafka    
 安装地址： [Kafka镜像文件地址](http://mirror.bit.edu.cn/apache/kafka)    
 选择自己希望安装的kafka版本。这里以kafka2.1.1-2.2.1为例。     
@@ -74,7 +74,7 @@ $ echo $CLASSPATH
 ```shell
 $ wget http://mirror.bit.edu.cn/apache/kafka/2.2.1/kafka_2.11-2.2.1.tgz
 ```   
-图7    
+![graph8](/graphs/8.png)        
 **注意：**
 如果报错：wget: command not found。可通过如下命令安装wget：   
 ```shell
@@ -84,7 +84,7 @@ $ wget http://mirror.bit.edu.cn/apache/kafka/2.2.1/kafka_2.11-2.2.1.tgz
 ```shell
 $ tar zxvf kafka_2.11-2.2.1.tgz
 ```
-图8   
+![graph9](/graphs/9.png)      
 #### 3.命名化简（为了简化以后的shell命令和脚本）     
 ```shell
 $ mv kafka_2.11-2.2.1 kafka
@@ -116,7 +116,7 @@ ZooKeeper下载网址：[ZooKeeper镜像文件下载网址](http://mirror.bit.ed
 ```shell
 wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.5.6/apache-zookeeper-3.5.6-bin.tar.gz
 ```    
-图9    
+![graph10](/graphs/10.png)     
 ##### （2）解压安装并简化命名（与Kafka安装流程类似）      
 ```shell
 tar -zxvf apache-zookeeper-3.5.6-bin.tar.gz
