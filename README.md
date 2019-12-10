@@ -9,7 +9,7 @@
 ### 一、安装JDK   
 参考教程：[Centos7中yum安装jdk及配置环境变量](https://www.cnblogs.com/52lxl-top/p/9877202.html)   
 #### 1.查看系统版本 cat /etc/redhat-release    
-图1   
+![graph1](/graphs/1.png) 
 #### 2.安装之前先查看一下有无系统自带jdk   
 ```shell     
 # rpm -qa |grep java
