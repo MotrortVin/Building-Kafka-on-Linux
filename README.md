@@ -5,18 +5,19 @@
 （普通用户状态下：“$”代表普通用户，“#”代表root用户）     
 参考教程1：[centos7安装kafka](https://blog.csdn.net/qq_28666081/article/details/92020989)   
 参考教程2：[CentOS7安装和使用kafka](https://blog.csdn.net/zzq900503/article/details/83348419)    
-环境：jdk1.8    kafka2.11    centos7    
-    + [一、安装JDK](#----jdk)
-    + [二、安装Kafka](#----kafka)
-    + [三、安装ZooKeeper服务](#----zookeeper--)
-      - [1.方案一 使用kafka自带的zookeeper](#1------kafka---zookeeper)
-      - [2.方案二 独立安装zookeeper服务](#2--------zookeeper--)
-      - [3.方案三 使用hadoop集群cdh等套件中的zookeeper（目前探索中，未完待续）](#3------hadoop--cdh-----zookeeper------------)
-    + [四、kafka操作](#--kafka--)
-      - [1.方案一：使用kafka自带的zookeeper](#1------kafka---zookeeper)
-      - [2.方案二：独立安装zookeeper服务](#2--------zookeeper--)
-      - [3.方案三、目前正在探索中](#3-----------)
-    + [附：前台执行和后台执行方法对比](#---------------)     
+环境：jdk1.8    kafka2.11    centos7     
+- [一、安装JDK](#----jdk)
+- [二、安装Kafka](#----kafka)
+- [三、安装ZooKeeper服务](#----zookeeper--)
+  * [1.方案一 使用kafka自带的zookeeper](#1------kafka---zookeeper)
+  * [2.方案二 独立安装zookeeper服务](#2--------zookeeper--)
+  * [3.方案三 使用hadoop集群cdh等套件中的zookeeper（目前探索中，未完待续）](#3------hadoop--cdh-----zookeeper------------)
+- [四、kafka操作](#--kafka--)
+  * [1.方案一：使用kafka自带的zookeeper](#1------kafka---zookeeper)
+  * [2.方案二：独立安装zookeeper服务](#2--------zookeeper--)
+  * [3.方案三、目前正在探索中](#3-----------)
+    + [附：前台执行和后台执行方法对比](#---------------)    
+-----
 ### 一、安装JDK   
 参考教程：[Centos7中yum安装jdk及配置环境变量](https://www.cnblogs.com/52lxl-top/p/9877202.html)   
 #### 1.查看系统版本 cat /etc/redhat-release    
