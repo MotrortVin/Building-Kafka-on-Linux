@@ -6,8 +6,8 @@
 参考教程1：[centos7安装kafka](https://blog.csdn.net/qq_28666081/article/details/92020989)   
 参考教程2：[CentOS7安装和使用kafka](https://blog.csdn.net/zzq900503/article/details/83348419)    
 环境：jdk1.8    kafka2.11    centos7     
-- [一、安装JDK](###-一、安装JDK)
-- [二、安装Kafka](###-二、安装Kafka)
+- [一、安装JDK](###一安装JDK)
+- [二、安装Kafka](###二安装Kafka)
 - [三、安装ZooKeeper服务](#----zookeeper--)
   * [1.方案一 使用kafka自带的zookeeper](#1------kafka---zookeeper)
   * [2.方案二 独立安装zookeeper服务](#2--------zookeeper--)
