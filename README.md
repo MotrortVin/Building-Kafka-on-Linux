@@ -12,11 +12,11 @@
   * [1.方案一 使用kafka自带的zookeeper](#1方案一-使用kafka自带的zookeeper)
   * [2.方案二 独立安装zookeeper服务](#2方案二-独立安装zookeeper服务)
   * [3.方案三 使用hadoop集群cdh等套件中的zookeeper（目前探索中，未完待续）](#3方案三-使用hadoop集群cdh等套件中的zookeeper目前探索中未完待续)
-- [四、kafka操作](#--kafka--)
-  * [1.方案一：使用kafka自带的zookeeper](#1------kafka---zookeeper)
-  * [2.方案二：独立安装zookeeper服务](#2--------zookeeper--)
-  * [3.方案三、目前正在探索中](#3-----------)
-    + [附：前台执行和后台执行方法对比](#---------------)    
+- [四、kafka操作](#四kafka操作)
+  * [1.方案一：使用kafka自带的zookeeper](#1方案一使用kafka自带的zookeeper)
+  * [2.方案二：独立安装zookeeper服务](2方案二独立安装zookeeper服务)
+  * [3.方案三、目前正在探索中](#3方案三目前正在探索中)
+    + [附：前台执行和后台执行方法对比](#附前台执行和后台执行方法对比)    
 -----
 ### 一、安装JDK   
 参考教程：[Centos7中yum安装jdk及配置环境变量](https://www.cnblogs.com/52lxl-top/p/9877202.html)   
