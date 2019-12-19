@@ -5,8 +5,7 @@
 （普通用户状态下：“$”代表普通用户，“#”代表root用户）     
 参考教程1：[centos7安装kafka](https://blog.csdn.net/qq_28666081/article/details/92020989)   
 参考教程2：[CentOS7安装和使用kafka](https://blog.csdn.net/zzq900503/article/details/83348419)    
-环境：jdk1.8    kafka2.11    centos7    
-[一、安装JDK](### 一、安装JDK)    
+环境：jdk1.8    kafka2.11    centos7       
 ### 一、安装JDK   
 参考教程：[Centos7中yum安装jdk及配置环境变量](https://www.cnblogs.com/52lxl-top/p/9877202.html)   
 #### 1.查看系统版本 cat /etc/redhat-release    
