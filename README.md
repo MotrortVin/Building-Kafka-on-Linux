@@ -24,19 +24,19 @@
 ![graph1](/graphs/1.png) 
 #### 2.安装之前先查看一下有无系统自带jdk   
 ```shell     
-# rpm -qa |grep java
-# rpm -qa |grep jdk
-# rpm -qa |grep gcj
+$ rpm -qa |grep java
+$ rpm -qa |grep jdk
+$ rpm -qa |grep gcj
 ```   
 ![graph2](/graphs/2.png)   
 ![graph3](/graphs/3.png) 
 #### 3.如果有就使用批量卸载命令   
 ```shell
-# rpm -qa | grep java | xargs rpm -e --nodeps 
+$ rpm -qa | grep java | xargs rpm -e --nodeps 
 ```   
 #### 4.直接yum安装1.8.0版本openjdk   
 ```shell
-# yum install java-1.8.0-openjdk* -y
+$ sudo yum install java-1.8.0-openjdk* -y
 ```    
 #### 5.检查版本    
 ```shell
@@ -90,7 +90,7 @@ $ wget http://mirror.bit.edu.cn/apache/kafka/2.2.1/kafka_2.11-2.2.1.tgz
 **注意：**
 如果报错：wget: command not found。可通过如下命令安装wget：   
 ```shell
-# yum -y install wget
+$sudo yum -y install wget
 ```    
 #### 2.解压   
 ```shell
@@ -126,14 +126,14 @@ ZooKeeper下载网址：[ZooKeeper镜像文件下载网址](http://mirror.bit.ed
 **注意：**
 目前的最新版本3.5.5开始，带有bin名称的包才是我们想要的下载可以直接使用的里面有编译后的二进制的包，而之前的普通的tar.gz的包里面是只是源码的包无法直接使用。所以要安装带bin的包！（这个源码包和编译后的包的命名方式将来可能会改，大家下载之前一定要去网页上确认一下自己下载的版本的已编译的包的名字）    
 ```shell
-wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.5.6/apache-zookeeper-3.5.6-bin.tar.gz
+$ sudo wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.5.6/apache-zookeeper-3.5.6-bin.tar.gz
 ```    
 ![graph10](/graphs/10.png)     
 ##### （2）解压安装并简化命名（与Kafka安装流程类似）      
 ```shell
-tar -zxvf apache-zookeeper-3.5.6-bin.tar.gz
-mv apache-zookeeper-3.5.6-bin zookeeper
-cd zookeeper
+$ tar -zxvf apache-zookeeper-3.5.6-bin.tar.gz
+$ mv apache-zookeeper-3.5.6-bin zookeeper
+$ cd zookeeper
 ```     
 ![graph11](/graphs/11.png)     
 进入了ZooKeeper目录，最后创建data目录，为稍后配置文件做准备：   
@@ -142,7 +142,7 @@ cd zookeeper
 **a.直接修改**   
 使用命令vi conf/zoo.cfg 打开名为 conf/zoo.cfg 的配置文件，并将所有以下参数设置为起点。
 ```(shell)
-vi conf/zoo.cfg
+$ sudo vi conf/zoo.cfg
 ```   
 进入编辑模式后，输入下面几行：   
 ```(shell)
@@ -155,8 +155,8 @@ syncLimit=2
 编辑结束后，按Esc键，输入 :wq再按回车即可保存退出。    
 **b.复制修改**   
 ```(shell)
-cp zoo_sample.cfg zoo.cfg
-vim zoo.cfg
+$ cp zoo_sample.cfg zoo.cfg
+$ vim zoo.cfg
 ```   
 进入编辑模式后，修改dataDir这一行，改成当前地址:    
 ```(shell)
@@ -172,7 +172,7 @@ dataDir=/…(zookeeper的路径)/zookeeper/data
 ##### (1)进入Kafka目录   
 如若当前不在kafka目录中的话，可以先进入kafka的目录。    
 ```(shell)
-cd ~/kafka
+$ cd ~/kafka
 ```   
 ##### (2)首先启动kafka自带的zookeeper
 ```(shell)
@@ -187,7 +187,7 @@ $ sudo bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
 ##### (3)接下来启动kafka   
 在kafka目录下执行下面的命令：   
 ```(shell)
-bin/kafka-server-start.sh –daemon config/server.properties
+$ sudo bin/kafka-server-start.sh –daemon config/server.properties
 ```    
 上述命令可以后台执行kafka，为了简化操作，建议后台执行kafka。如果需要前台执行的话，也可以去掉命令中-daemon，前台执行，这样会出现执行kafka的报文。   
 如果使用前台执行出现报文如下，则说明启动成功。   
@@ -203,18 +203,18 @@ bin/kafka-server-start.sh –daemon config/server.properties
 ##### (4)使用Kafka
 如若当前不在kafka目录中的话，可以先进入kafka的目录。   
 ```(shell)
-cd ~/kafka     
+$ cd ~/kafka     
 ```   
 进入kafka目录后执行下面操作:   
 创建topic:   
 ```(shell)
-bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic talk
+$ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic talk
 ```   
 输入并执行，即可创建一个名称为talk的topic(使用`kafka-topics.sh`创建单分区单副本的topic test):   
 ![graph14](/graphs/14.png)     
 生产信息(使用`kafka-console-producer.sh`发送消息)：要注意端口设置！   
 ```(shell)
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic talk
+$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic talk
 ```    
 ![graph15](/graphs/15.png)    
 输入信息内容，比如：   
@@ -226,11 +226,11 @@ Hello Kafka!
 消费信息(使用`kafka-console-consumer.sh`接收消息并在终端打印)：   
 旧版本命令：要注意端口设置！   
 ```(shell)
-bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic talk --from-beginning
+$ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic talk --from-beginning
 ```   
 新版本命令：要注意端口设置！   
 ```(shell)
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic talk --from-beginning
+$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic talk --from-beginning
 ```   
 ![graph16](/graphs/16.png)    
 ##### (5)结束之后，停止kafka服务器    
@@ -243,7 +243,7 @@ $ sudo bin/kafka-server-stop.sh config/server.properties
 ##### (6)停止zookeeper
 如若当前不在kafka目录中的话，可以先进入kafka的目录。   
 ```(shell)
-cd ~/kafka     
+$ cd ~/kafka     
 ```   
 在新开的终端里键入cd+kafka的路径后，进入kafka目录后停止kafka自带的zookeeper服务。    
 ```(shell)
@@ -257,8 +257,8 @@ $ sudo bin/zookeeper-server-stop.sh -daemon config/zookeeper.properties
 ##### （1）启动ZooKeeper服务器   
 如若当前不在zookeeper目录中的话，可以先进入zookeeper的目录。   
 ```(shell)
-cd ~/zookeeper
-bin/zkServer.sh start
+$ cd ~/zookeeper
+$ bin/zkServer.sh start
 ```   
 如果报错了：   
 ```(shell)
@@ -269,7 +269,7 @@ FAILED TO WRITE PID
 ![graph19](/graphs/19.png)    
 启动CLI进入操作系统界面   
 ```(shell)
-bin/zkCli.sh  
+$ bin/zkCli.sh  
 ```   
 接下来将被连接到zookeeper服务器，此时会有如下响应：   
 ![graph20](/graphs/20.png)     
@@ -280,14 +280,14 @@ bin/zkCli.sh
 如果没有出现最后一行`[zk: localhost:2181(CONNECTED) 0]`，则未进入操作系统界面，这里可以检查一下自己在三、2.(3)创建配置文件 中dataDir的路径是否有误。   
 如果报错，可以键入命令：   
 ```(shell)
-sudo bin/zkServer.sh status
+$ sudo bin/zkServer.sh status
 ```   
 查看zookeeper是否真正启动，如果出现Error contacting service. It is probably not running.则说明zookeeper未能真正启动。（未能真正启动的原因可以自行百度）   
 ##### (2)在新的终端里，按照方案一中的（3）（4）（5）执行
 ##### (3)停止ZooKeeper服务器   
 如果目前处于[zk: localhost:2181(CONNECTED) 0]阶段，且执行完所有操作后，可以按`ctrl`+`C`退出操作系统界面。然后输入下面的命令退出。     
 ```(shell)
-bin/zkServer.sh stop
+$ bin/zkServer.sh stop
 ```    
 （没有权限的话记得加sudo）    
 ![graph22](/graphs/22.png)    
